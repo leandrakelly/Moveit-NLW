@@ -5,11 +5,11 @@ import { ChallengesContext } from '../contexts/ChallengesContext';
 let countdownTimeOut: NodeJS.Timeout;
 
 export function Countdown(){
+    const { startNewChallenge, levelUp } = useContext(ChallengesContext);
     const [time, setTime] = useState(0.1 * 60); //tempo em segundos
     const [isActive, setIsActive] = useState(false);
     const [hasFiniched, setHasFiniched] = useState(false);
-
-    const { startNewChallenge } = useContext(ChallengesContext);
+    console.log(startNewChallenge, levelUp);
 
     const minutes = Math.floor(time / 60); //nao pegar número quebrado
     const seconds = time % 60;
